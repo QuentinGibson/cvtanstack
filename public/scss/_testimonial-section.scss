@@ -1,0 +1,41 @@
+
+/*------------------------------------------------- */
+/* =  testimonial section
+/*------------------------------------------------- */
+
+section.testimonial-section {
+	padding: 100px 0 70px;
+	background: #f1f1f1;
+	.testimonial-box {
+		.testimonial-post {
+			margin-bottom: 30px;
+			display: flex;
+		}
+		img {
+			margin-right: 25px;
+			width: 70px;
+			height: 70px;
+			@include border-radius(50%);
+		}
+		.testimonial-content {
+			padding-right: 40px;
+			h2 {
+	            font-size: 22px;
+	            margin-bottom: 0;
+	        }
+	        span {
+	            display: inline-block;
+	            color: $second-color;
+	            font-size: 12px;
+	            font-family: $font-default;
+	            font-weight: 700;
+	            text-transform: uppercase;
+	            margin-bottom: 10px;
+	        }
+	        p {
+	            font-size: 15px;
+	            margin-bottom: 0;
+	        }
+		}
+	}
+}

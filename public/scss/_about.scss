@@ -1,0 +1,75 @@
+
+/*------------------------------------------------- */
+/* =  About sections */
+/*------------------------------------------------- */
+
+section.about-section {
+	padding: 100px 0;
+	position: relative;
+	.about-box {
+        .video-popup {
+            position: relative;
+            margin-bottom: 90px;
+            img {
+            	width: 100%;
+            	height: auto;
+                margin-bottom: 0;
+            }
+            div.hover-box {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(255,255,255,0);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include transition(0.2s);
+                a {
+                    width: 120px;
+                    height: 120px;
+                    line-height: 126px;
+                    text-align: center;
+                    color: #fff;
+                    background: $primary-color;
+                    font-size: 20px;
+                    font-family: $font-default;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    @include border-radius(50%);
+                }
+                a:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+        .video-popup:hover {
+            div.hover-box {
+                background: rgba(255,255,255,0.4);
+            }
+        }
+        .about-text {
+        	max-width: 900px;
+        	margin: 0 auto;
+        	text-align: center;
+        	h1 {
+        		margin-bottom: 0;
+        	}
+        	span {
+        		display: inline-block;
+		        color: $primary-color;
+		        font-size: 15px;
+		        font-family: $font-default;
+		        font-weight: 600;
+		        text-transform: uppercase;
+		        margin: 0 0 30px;
+        	}
+        	p {
+        		font-size: 15px;
+        		margin-bottom: 20px;
+        	}
+        }
+	}
+}

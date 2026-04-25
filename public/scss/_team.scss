@@ -1,0 +1,69 @@
+
+/*------------------------------------------------- */
+/* =  Team Sections */
+/*------------------------------------------------- */
+
+
+section.team-section {
+    padding: 100px 0 70px;
+    background: #f1f1f1;
+    .title-section {
+        text-align: center;
+        margin-bottom: 40px;
+        h1 {
+            margin-bottom: 0;
+        }
+    }
+    .team-box {
+        .team-post {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 10px;
+            img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 25px;
+                @include border-radius(50%);
+            }
+            ul.social-icons {
+                @extend .reset-elem;
+                margin-bottom: 15px;
+                li {
+                    display: inline-block;
+                    margin: 0 10px;
+                    a {
+                        color: $text-color;
+                        font-size: 19px;
+                    }
+                    a.facebook:hover {
+                        color: #3B5998;
+                    }
+                    a.twitter:hover {
+                        color: #1dcaff;
+                    }
+                    a.dribbble:hover {
+                        color: #ea4c89;
+                    }
+                }
+            }
+            h2 {
+                font-size: 22px;
+                margin-bottom: 0;
+            }
+            span {
+                display: inline-block;
+                color: $second-color;
+                font-size: 12px;
+                font-family: $font-default;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 15px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+

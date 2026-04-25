@@ -1,0 +1,123 @@
+
+/*-------------------------------------------------*/
+/* =  Responsive Part
+/*-------------------------------------------------*/
+
+@media (max-width: 1800px) {
+	.fixed-vertical-header {
+		padding: 50px;
+		width: 355px;
+		left: -355px;
+		.navbar-nav > li > a {
+			line-height: 40px;
+			font-size: 17px;
+		}
+	}
+	.fixed-vertical-header.active {
+		left: 0;
+	}
+}
+
+@media (max-width: 1199px) {
+	section.portfolio-section .portfolio-box.iso-call .project-post {
+		width: 290px;
+	}
+	#map {
+		height: 400px;
+	}
+}
+
+@media (max-width: 991px) {
+	section.clients-section .clients-box ul.client-list li {
+		width: 33.333333%;
+	}
+	section.clients-section .clients-box ul.client-list li:nth-child(4n) {
+		border-right: 1px solid #e4e4e4;
+	}
+	section.clients-section .clients-box ul.client-list li:nth-child(3n) {
+		border-right: none;
+	}
+	section.clients-section .clients-box ul.client-list li:nth-last-child(4) {
+		border-bottom: 1px solid #e4e4e4;
+	}
+	section.portfolio-section .portfolio-box.iso-call .project-post {
+		width: 330px;
+	}
+	.sidebar {
+		padding-right: 0;
+	}
+	#map {
+		height: 300px;
+	}
+	.fixed-vertical-header {
+		.inner-fixed-vertical {
+			> a,p {
+				display: none;
+			}
+		}
+		p,
+		.header-foot {
+			display: none;
+		}
+	}
+	.sidebar {
+		padding-top: 80px;
+	}
+}
+
+@media (max-width: 767px) {
+	.comment-area-box ul.depth .comment-box {
+		padding-left: 0;
+	}
+	section.clients-section .clients-box ul.client-list li {
+		width: 50%;
+	}
+	section.clients-section .clients-box ul.client-list li:nth-child(3n) {
+		border-right: 1px solid #e4e4e4;
+	}
+	section.clients-section .clients-box ul.client-list li:nth-child(2n) {
+		border-right: none;
+	}
+	section.clients-section .clients-box ul.client-list li:nth-last-child(3) {
+		border-bottom: 1px solid #e4e4e4;
+	}
+	.tparrows {
+		display: none !important;
+	}
+	section.portfolio-section .portfolio-box.iso-call .project-post {
+		width: 100%;
+		margin: 15px 0;
+	}
+	section.portfolio-section .portfolio-box.iso-call {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	ul.depth {
+		padding-left: 0;
+	}
+	#map {
+		height: 200px;
+	}
+	section.single-portfolio-section .single-portfolio-box .project-content {
+		padding-top: 50px;
+	}
+	.title-section p {
+		font-size: 28px;
+		line-height: 40px;
+	}
+	section.blog-section .blog-box.single-post h1 {
+		font-size: 30px;
+	}
+}
+
+@media (max-width: 500px) {
+	section.clients-section .clients-box ul.client-list li {
+		width: 100%;
+	}
+	section.clients-section .clients-box ul.client-list li {
+		border-right: none !important;
+	}
+	section.clients-section .clients-box ul.client-list li:nth-last-child(2) {
+		border-bottom: 1px solid #e4e4e4;
+	}
+}

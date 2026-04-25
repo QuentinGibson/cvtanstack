@@ -1,0 +1,99 @@
+
+ 
+/*-------------------------------------------------- */
+/* 1. Isotope filtering */
+/*------------------------------------------------- */
+.isotope-item {
+    z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
+}
+
+.isotope, .isotope .isotope-item {
+    // change duration value to whatever you like
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+
+.isotope {
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    transition-property: height, width;
+}
+
+.isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+/*------------------------------------------------- */
+/* =  General */
+/*------------------------------------------------- */
+
+p {
+    @extend .paragraph;
+}
+
+h1 {
+    @extend .heading1;
+}
+
+h2 {
+    @extend .heading2;
+}
+
+h3 {
+    @extend .heading3;
+}
+
+a {
+    @extend .anchor;
+}
+
+.title-section {
+    margin-bottom: 80px;
+    position: relative;
+    span {
+        display: inline-block;
+        color: $primary-color;
+        font-size: 15px;
+        font-family: $font-default;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0 0 8px;
+    }
+    p {
+        font-size: 38px;
+        line-height: 55px;
+        margin: 0;
+    }
+}
+
+a.button-one {
+    color: $second-color;
+    font-size: 23px;
+    font-family: $font-alternative;
+    padding: 13px 20px;
+    @include transition(0.2s);
+    margin: 0;
+    position: relative;
+    border-bottom: 2px solid $second-color;
+}
+
+a.button-one:hover {
+    color: $primary-color;
+    border-bottom: 2px solid $primary-color;
+}
+
+.center-button {
+    text-align: center;
+}
+
+button.mfp-close, button.mfp-arrow, a.zoom {
+    outline: none;
+}

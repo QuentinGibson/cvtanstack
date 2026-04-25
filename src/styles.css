@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,700|Montserrat:400,500,600,700");
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #ff9900;
+  --color-text-main: #37404d;
+  --font-crimson: "Crimson Text", serif;
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply text-text-main font-crimson text-[19px] leading-[26px] bg-white antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-text-main font-normal;
+  }
+}

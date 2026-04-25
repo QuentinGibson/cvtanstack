@@ -1,0 +1,46 @@
+
+/*------------------------------------------------- */
+/* =  clients section */
+/*------------------------------------------------- */
+
+section.clients-section {
+    padding: 100px 0;
+    .clients-box {
+        ul.client-list {
+            @extend .reset-elem;
+            overflow: hidden;
+            li {
+                float: left;
+                width: 25%;
+                height: 168px;
+                list-style: none;
+                border-right: 1px solid #e4e4e4;
+                border-bottom: 1px solid #e4e4e4;
+                a {
+                    opacity: 0.25;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                    }
+                }
+                a:hover {
+                    opacity: 1;
+                }
+            }
+            li:nth-child(4n) {
+                border-right: none;
+            }
+            li:nth-last-child(4),
+            li:nth-last-child(3),
+            li:nth-last-child(2),
+            li:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}

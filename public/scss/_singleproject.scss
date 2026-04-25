@@ -1,0 +1,124 @@
+
+/*------------------------------------------------- */
+/* =  Single Project */
+/*------------------------------------------------- */
+
+section.single-portfolio-section {
+	padding: 80px 0;
+	.single-portfolio-box {
+		margin-bottom: 50px;
+		.single-galery {
+			img {
+				width: 100%;
+				height: auto;
+				margin-bottom: 30px;
+			}
+		}
+		.single-project-links {
+			padding-top: 10px;
+			a {
+				color: $second-color;
+				font-size: 21px;
+				font-family: $font-alternative;
+			}
+			a:hover {
+				color: $primary-color;
+			}
+			a.prev,
+			a.next {
+				padding: 0 10px;
+				border-bottom: 2px solid transparent;
+				float: right;
+				position: relative;
+			}
+			a.prev {
+				margin-right: 5px;
+			}
+			a.prev:hover,
+			a.next:hover {
+				border-bottom: 2px solid $primary-color;
+			}
+			a.next:before {
+				position: absolute;
+				top: 0;
+				left: -5px;
+				content: '/';
+				color: $second-color;
+				font-size: 21px;
+				font-family: $font-alternative;
+			}
+		}
+		.project-content {
+			h2 {
+				font-size: 23px;
+				margin-bottom: 25px;
+			}
+			p {
+				font-size: 15px;
+				color: #37404d;
+			}
+		}
+	}
+}
+
+div.similar-box {
+	padding-top: 50px;
+	border-top: 1px solid #e4e4e4;
+	h2 {
+		text-align: center;
+		font-size: 23px;
+		margin-bottom: 30px;
+	}
+	.project-post {
+		position: relative;
+		margin-bottom: 30px;
+		img {
+			width: 100%;
+			height: auto;
+		}
+		.hover-box {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			right: 20px;
+			bottom: 20px;
+			z-index: 2;
+			opacity: 0;
+			background: rgba(255,255,255,0.96);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			@include transition(0.2s);
+			.inner-hover {
+				text-align: center;
+				h2 {
+					margin-bottom: 50px;
+					@include transition(0.3s);
+					a {
+						color: $primary-color;
+					}
+					a:hover {
+						opacity: 0.7;
+					}
+				}
+				span {
+					display: inline-block;
+					color: $second-color;
+					font-size: 10px;
+					font-family: $font-default;
+					font-weight: 700;
+					text-transform: uppercase;
+					margin: 0;
+				}
+			}
+		}
+	}
+	.project-post:hover {
+		.hover-box {
+			opacity: 1;
+			.inner-hover h2 {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
