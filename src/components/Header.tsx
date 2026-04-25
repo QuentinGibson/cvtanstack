@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import { Link, useNavigate } from '@tanstack/react-router'
 
+const address = import.meta.env.VITE_ADDRESS || ''
+const phone = import.meta.env.VITE_PHONE || ''
+const email = import.meta.env.VITE_EMAIL || ''
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
@@ -87,9 +91,9 @@ export default function Header() {
           </div>
           
           <p className="text-white text-[17px] font-['Crimson_Text',serif] mt-[30px] leading-[26px]">
-            587 Str. Norman Crook, New York, USA <br />
-            (414) 757-885<br />
-            info@yourdomain.com<br /><br />
+            {address && <>{address}<br /></>}
+            {phone && <>{phone}<br /></>}
+            {email && <>{email}<br /><br /></>}
             Powered by CVbuilder<br />
             All rights reserved 2018
           </p>
