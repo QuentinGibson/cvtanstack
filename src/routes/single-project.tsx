@@ -51,7 +51,7 @@ function SingleProject() {
                 <div key={index} className="w-full lg:w-1/3 px-[15px] mb-[30px]">
                   <div className="relative group overflow-hidden">
                     <img src={`upload/portfolio/${project.img}`} alt={project.title} className="w-full h-auto block" />
-                    <div className="absolute top-[20px] left-[20px] right-[20px] bottom-[20px] z-10 opacity-0 bg-white/95 flex items-center justify-center transition-all duration-200 group-hover:opacity-100">
+                    <div className="absolute top-[20px] left-[20px] right-[20px] bottom-[20px] z-10 opacity-0 bg-black/90 flex items-center justify-center transition-all duration-200 group-hover:opacity-100">
                       <div className="text-center">
                         <h2 className="text-[21px] font-['Crimson_Text',serif] mb-[50px] transition-all duration-300 group-hover:mb-0">
                           <Link to="/single-project" className="text-[#ff9900] hover:opacity-70 transition-opacity">

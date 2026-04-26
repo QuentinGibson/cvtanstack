@@ -34,7 +34,7 @@ function HomeWhiteHeader() {
               <img src={item.img} alt={item.title} className="w-full h-full object-cover block" />
               
               {/* Hover Box */}
-              <div className="absolute top-[20px] left-[20px] right-[20px] bottom-[20px] z-10 opacity-0 bg-white/95 flex items-center justify-center transition-all duration-200 group-hover:opacity-100">
+              <div className="absolute top-[20px] left-[20px] right-[20px] bottom-[20px] z-10 opacity-0 bg-black/90 flex items-center justify-center transition-all duration-200 group-hover:opacity-100">
                 <div className="text-center">
                   <h2 className="text-[21px] font-['Crimson_Text',serif] mb-[50px] transition-all duration-300 group-hover:mb-0 text-[#ff9900]">
                     {item.title}
@@ -64,14 +64,14 @@ function HomeWhiteHeader() {
         onClick={() => setSelectedProject(null)}
       >
         <div 
-          className={`bg-white w-full max-w-[900px] max-h-[90vh] overflow-y-auto rounded-sm relative transition-all duration-500 transform ${
+          className={`bg-dark-bg w-full max-w-[900px] max-h-[90vh] overflow-y-auto rounded-sm relative transition-all duration-500 transform border border-border-light ${
             selectedProject ? 'translate-y-0 opacity-100' : 'translate-y-[50px] opacity-0'
           }`}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close Button */}
           <button 
-            className="absolute top-[20px] right-[20px] w-[40px] h-[40px] bg-white rounded-full flex items-center justify-center shadow-md z-10 text-[#37404d] hover:text-[#ff9900] transition-colors"
+            className="absolute top-[20px] right-[20px] w-[40px] h-[40px] bg-dark-bg rounded-full flex items-center justify-center shadow-md z-10 text-text-main hover:text-brand transition-colors border border-border-light"
             onClick={() => setSelectedProject(null)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
