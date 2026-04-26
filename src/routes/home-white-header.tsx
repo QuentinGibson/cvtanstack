@@ -15,10 +15,10 @@ function HomeWhiteHeader() {
       <div className="max-w-[1170px] mx-auto px-[15px]">
         {/* Title Section */}
         <div className="mb-[80px] relative">
-          <span className="inline-block text-[#ff9900] text-[15px] font-['Montserrat',sans-serif] font-bold uppercase mb-[8px]">
+          <span className="inline-block text-brand text-[15px] font-orbitron font-bold uppercase mb-[8px]">
             Welcome You People
           </span>
-          <p className="text-[38px] leading-[55px] m-0 text-[#37404d] font-['Crimson_Text',serif]">
+          <p className="text-[38px] leading-[55px] m-0 text-text-main font-rajdhani">
             We work with people that are as dedicated to their work as we are to ours. And, we do everything with hard work and our core values of honesty.
           </p>
         </div>
@@ -36,10 +36,10 @@ function HomeWhiteHeader() {
               {/* Hover Box */}
               <div className="absolute top-[20px] left-[20px] right-[20px] bottom-[20px] z-10 opacity-0 bg-black/90 flex items-center justify-center transition-all duration-200 group-hover:opacity-100">
                 <div className="text-center">
-                  <h2 className="text-[21px] font-['Crimson_Text',serif] mb-[50px] transition-all duration-300 group-hover:mb-0 text-[#ff9900]">
+                  <h2 className="text-[21px] font-rajdhani mb-[50px] transition-all duration-300 group-hover:mb-0 text-brand">
                     {item.title}
                   </h2>
-                  <span className="inline-block text-[#37404d] text-[10px] font-['Montserrat',sans-serif] font-bold uppercase m-0">
+                  <span className="inline-block text-text-main text-[10px] font-orbitron font-bold uppercase m-0">
                     {item.category}
                   </span>
                 </div>
@@ -50,7 +50,7 @@ function HomeWhiteHeader() {
         
         {/* Center Button */}
         <div className="text-center mt-[50px]">
-          <button className="inline-block text-[#37404d] text-[23px] font-['Crimson_Text',serif] px-[20px] py-[13px] border-b-2 border-[#37404d] hover:text-[#ff9900] hover:border-[#ff9900] transition-all duration-200 cursor-pointer bg-transparent">
+          <button className="inline-block text-text-main text-[23px] font-rajdhani px-[20px] py-[13px] border-b-2 border-text-main hover:text-brand hover:border-brand transition-all duration-200 cursor-pointer bg-transparent">
             Load More
           </button>
         </div>
@@ -89,30 +89,30 @@ function HomeWhiteHeader() {
                 />
               </div>
               <div className="w-full md:w-1/2 p-[40px] lg:p-[60px] flex flex-col justify-center">
-                <span className="text-[#ff9900] text-[13px] font-['Montserrat',sans-serif] font-bold uppercase tracking-wider mb-[10px] block">
+                <span className="text-brand text-[13px] font-orbitron font-bold uppercase tracking-wider mb-[10px] block">
                   {selectedProject.category}
                 </span>
-                <h2 className="text-[32px] md:text-[42px] font-['Crimson_Text',serif] text-[#37404d] mb-[20px] leading-tight">
+                <h2 className="text-[32px] md:text-[42px] font-rajdhani text-text-main mb-[20px] leading-tight">
                   {selectedProject.title}
                 </h2>
-                <div className="w-[50px] h-[2px] bg-[#ff9900] mb-[30px]"></div>
+                <div className="w-[50px] h-[2px] bg-brand mb-[30px]"></div>
                 
-                <p className="text-[17px] text-[#37404d] font-['Crimson_Text',serif] leading-[28px] mb-[30px]">
+                <p className="text-[17px] text-text-main font-rajdhani leading-[28px] mb-[30px]">
                   {selectedProject.description}
                 </p>
                 
-                <ul className="m-0 p-0 list-none space-y-[15px] border-t border-[#e4e4e4] pt-[30px]">
+                <ul className="m-0 p-0 list-none space-y-[15px] border-t border-border-light pt-[30px]">
                   <li className="flex justify-between">
-                    <span className="text-[#37404d] font-['Montserrat',sans-serif] font-bold text-[13px] uppercase">Client:</span>
-                    <span className="text-[#969696] font-['Montserrat',sans-serif] text-[13px]">{selectedProject.client}</span>
+                    <span className="text-text-main font-orbitron font-bold text-[13px] uppercase">Client:</span>
+                    <span className="text-text-muted font-orbitron text-[13px]">{selectedProject.client}</span>
                   </li>
                   <li className="flex justify-between">
-                    <span className="text-[#37404d] font-['Montserrat',sans-serif] font-bold text-[13px] uppercase">Date:</span>
-                    <span className="text-[#969696] font-['Montserrat',sans-serif] text-[13px]">{selectedProject.date}</span>
+                    <span className="text-text-main font-orbitron font-bold text-[13px] uppercase">Date:</span>
+                    <span className="text-text-muted font-orbitron text-[13px]">{selectedProject.date}</span>
                   </li>
                   <li className="flex justify-between">
-                    <span className="text-[#37404d] font-['Montserrat',sans-serif] font-bold text-[13px] uppercase">Skills:</span>
-                    <span className="text-[#969696] font-['Montserrat',sans-serif] text-[13px]">
+                    <span className="text-text-main font-orbitron font-bold text-[13px] uppercase">Skills:</span>
+                    <span className="text-text-muted font-orbitron text-[13px]">
                       {selectedProject.skills?.join(', ')}
                     </span>
                   </li>
@@ -121,7 +121,7 @@ function HomeWhiteHeader() {
                 <div className="mt-[40px]">
                   <Link 
                     to="/single-project" 
-                    className="inline-block bg-[#ff9900] text-white text-[13px] font-['Montserrat',sans-serif] font-bold uppercase tracking-wider px-[30px] py-[15px] rounded-sm hover:bg-[#37404d] transition-colors"
+                    className="inline-block bg-brand text-black text-[13px] font-orbitron font-bold uppercase tracking-wider px-[30px] py-[15px] rounded-sm hover:bg-text-main transition-colors"
                   >
                     View Full Project
                   </Link>

@@ -10,10 +10,10 @@ function Blog() {
       <section className="py-[100px]">
         <div className="max-w-[1170px] mx-auto px-[15px]">
           <div className="mb-[80px] relative">
-            <span className="inline-block text-[#ff9900] text-[15px] font-['Montserrat',sans-serif] font-bold uppercase mb-[8px]">
+            <span className="inline-block text-brand text-[15px] font-orbitron font-bold uppercase mb-[8px]">
               blog posts
             </span>
-            <p className="text-[38px] leading-[55px] m-0 text-[#37404d] font-['Crimson_Text',serif]">
+            <p className="text-[38px] leading-[55px] m-0 text-text-main font-rajdhani">
               This is a sample text block, you can describe services in short words, or fill up with some nice and niche informations about your company.
             </p>
           </div>
@@ -33,19 +33,19 @@ function Blog() {
                     <Link to="/single-post" className="inline-block mb-[25px]">
                       <img src={`upload/blog/${post.img}`} alt={post.title} className="w-full h-auto" />
                     </Link>
-                    <span className="block text-[#969696] text-[15px] font-['Montserrat',sans-serif] font-semibold mb-[5px] uppercase">
+                    <span className="block text-text-muted text-[15px] font-orbitron font-semibold mb-[5px] uppercase">
                       {post.date}
                     </span>
-                    <h2 className="text-[30px] leading-[36px] m-0 mb-[20px] pb-[20px] font-['Crimson_Text',serif] relative after:content-[''] after:absolute after:w-[170px] after:h-[1px] after:bg-[#cecece] after:bottom-0 after:left-1/2 after:-ml-[85px]">
-                      <Link to="/single-post" className="text-[#37404d] hover:text-[#ff9900] transition-colors">
+                    <h2 className="text-[30px] leading-[36px] m-0 mb-[20px] pb-[20px] font-rajdhani relative after:content-[''] after:absolute after:w-[170px] after:h-[1px] after:bg-border-med after:bottom-0 after:left-1/2 after:-ml-[85px]">
+                      <Link to="/single-post" className="text-text-main hover:text-brand transition-colors">
                         {post.title}
                       </Link>
                     </h2>
                     <ul className="m-0 p-0">
                       {post.tags.map((tag, tagIndex) => (
                         <li key={tagIndex} className="inline-block mr-[3px]">
-                          {tagIndex > 0 && <span className="text-[#969696] text-[13px] font-['Montserrat',sans-serif] mr-[6px]">/</span>}
-                          <a href="#" className="text-[#969696] text-[15px] font-['Montserrat',sans-serif] hover:text-[#ff9900] transition-colors">
+                          {tagIndex > 0 && <span className="text-text-muted text-[13px] font-orbitron mr-[6px]">/</span>}
+                          <a href="#" className="text-text-muted text-[15px] font-orbitron hover:text-brand transition-colors">
                             {tag}
                           </a>
                         </li>
@@ -59,19 +59,19 @@ function Blog() {
             <div className="mb-[20px] overflow-hidden text-center">
               <ul className="m-0 p-0 inline-block">
                 <li className="inline-block mx-[5px]">
-                  <a href="#" className="inline-block text-[#37404d] text-[23px] font-['Crimson_Text',serif] px-[10px] py-[3px] hover:text-[#ff9900] transition-colors">
+                  <a href="#" className="inline-block text-text-main text-[23px] font-rajdhani px-[10px] py-[3px] hover:text-brand transition-colors">
                     <i className="fa fa-long-arrow-left mr-[4px] leading-[30px]"></i>Prev
                   </a>
                 </li>
                 {[1, 2, 3].map((page) => (
                   <li key={page} className="inline-block mx-[5px]">
-                    <a href="#" className={`inline-block text-[23px] font-['Crimson_Text',serif] px-[10px] py-[3px] transition-colors border-b-2 ${page === 1 ? 'text-[#ff9900] border-[#ff9900]' : 'text-[#37404d] border-transparent hover:text-[#ff9900] hover:border-[#ff9900]'}`}>
+                    <a href="#" className={`inline-block text-[23px] font-rajdhani px-[10px] py-[3px] transition-colors border-b-2 ${page === 1 ? 'text-brand border-brand' : 'text-text-main border-transparent hover:text-brand hover:border-brand'}`}>
                       {page}
                     </a>
                   </li>
                 ))}
                 <li className="inline-block mx-[5px]">
-                  <a href="#" className="inline-block text-[#37404d] text-[23px] font-['Crimson_Text',serif] px-[10px] py-[3px] hover:text-[#ff9900] transition-colors">
+                  <a href="#" className="inline-block text-text-main text-[23px] font-rajdhani px-[10px] py-[3px] hover:text-brand transition-colors">
                     Next<i className="fa fa-long-arrow-right ml-[5px] leading-[30px]"></i>
                   </a>
                 </li>

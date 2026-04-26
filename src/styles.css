@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,700|Montserrat:400,500,600,700");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -8,15 +8,22 @@
   --color-dark-bg: #000000;
   --color-text-muted: #a3a3a3;
   --color-border-med: #555555;
-  --font-crimson: "Crimson Text", serif;
-  --font-montserrat: "Montserrat", sans-serif;
+  --font-orbitron: "Orbitron", sans-serif;
+  --font-rajdhani: "Rajdhani", sans-serif;
+  --font-mono: "Space Mono", monospace;
+  --font-logo: "cc-overbyte-on", sans-serif;
 }
 
 @layer base {
   body {
-    @apply text-text-main font-crimson text-[19px] leading-[26px] bg-black antialiased;
+    @apply text-text-main font-rajdhani text-[19px] leading-[26px] bg-black antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply text-text-main font-normal;
+    @apply text-text-main font-orbitron font-bold uppercase tracking-widest;
   }
+}
+
+.logo {
+  font-family: var(--font-logo);
+  @apply text-[32px] lowercase tracking-tighter;
 }

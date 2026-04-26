@@ -11,10 +11,10 @@ function Services() {
       <section className="py-[100px]">
         <div className="max-w-[1170px] mx-auto px-[15px]">
           <div className="mb-[80px] relative">
-            <span className="inline-block text-[#ff9900] text-[15px] font-['Montserrat',sans-serif] font-bold uppercase mb-[8px]">
+            <span className="inline-block text-brand text-[15px] font-orbitron font-bold uppercase mb-[8px]">
               What we provide
             </span>
-            <p className="text-[38px] leading-[55px] m-0 text-[#37404d] font-['Crimson_Text',serif]">
+            <p className="text-[38px] leading-[55px] m-0 text-text-main font-rajdhani">
               This is a sample text block, you can describe services in short words, or fill up with some nice and niche informations about your company.
             </p>
           </div>
@@ -47,8 +47,8 @@ function Services() {
                   </div>
                   <div className="w-full lg:w-1/2 px-[15px]">
                     <div className="py-[30px] px-[25px]">
-                      <h1 className="text-[38px] leading-[48px] m-0 mb-[20px] text-[#37404d] font-['Crimson_Text',serif]">{service.title}</h1>
-                      <p className="text-[19px] leading-[30px] m-0 text-[#37404d] font-['Crimson_Text',serif]" dangerouslySetInnerHTML={{ __html: service.desc }} />
+                      <h1 className="text-[38px] leading-[48px] m-0 mb-[20px] text-text-main font-rajdhani">{service.title}</h1>
+                      <p className="text-[19px] leading-[30px] m-0 text-text-main font-rajdhani" dangerouslySetInnerHTML={{ __html: service.desc }} />
                     </div>
                   </div>
                 </div>
@@ -65,11 +65,11 @@ function Services() {
                 { percent: '10', value: '8', label: 'Years of experience' }
               ].map((skill, index) => (
                 <div key={index} className="w-full sm:w-1/2 lg:w-1/4 px-[15px]">
-                  <div className="circle-skill relative w-[180px] h-[180px] mx-auto border-[4px] border-[#ff9900] rounded-full flex items-center justify-center">
+                  <div className="circle-skill relative w-[180px] h-[180px] mx-auto border-[4px] border-brand rounded-full flex items-center justify-center">
                     <div className="inner-circle absolute top-0 left-0 w-full h-full flex items-center justify-center">
                       <div>
-                        <span className="block text-[60px] font-['Crimson_Text',serif] font-bold m-0 leading-[40px] text-[#37404d]">{skill.value}</span>
-                        <p className="m-0 text-[13px] uppercase font-['Montserrat',sans-serif] text-[#37404d] mt-[10px]">{skill.label}</p>
+                        <span className="block text-[60px] font-rajdhani font-bold m-0 leading-[40px] text-text-main">{skill.value}</span>
+                        <p className="m-0 text-[13px] uppercase font-orbitron text-text-main mt-[10px]">{skill.label}</p>
                       </div>
                     </div>
                   </div>
@@ -80,7 +80,7 @@ function Services() {
         </div>
       </section>
       
-      <section className="py-[100px] pb-[70px] bg-[#f1f1f1]">
+      <section className="py-[100px] pb-[70px] bg-dark-bg">
         <div className="max-w-[1170px] mx-auto px-[15px]">
           <div>
             <div className="flex flex-wrap -mx-[15px]">
@@ -92,11 +92,11 @@ function Services() {
                   <div className="flex mb-[30px]">
                     <img src={`upload/others/${test.img}`} alt={test.name} className="mr-[25px] w-[70px] h-[70px] rounded-full shrink-0" />
                     <div className="pr-[40px]">
-                      <h2 className="text-[22px] leading-[28px] m-0 mb-0 text-[#37404d] font-['Crimson_Text',serif]">{test.name}</h2>
-                      <span className="inline-block text-[#37404d] text-[12px] font-['Montserrat',sans-serif] font-bold uppercase mb-[10px]">
+                      <h2 className="text-[22px] leading-[28px] m-0 mb-0 text-text-main font-rajdhani">{test.name}</h2>
+                      <span className="inline-block text-text-main text-[12px] font-orbitron font-bold uppercase mb-[10px]">
                         {test.role}
                       </span>
-                      <p className="text-[17px] leading-[26px] m-0 text-[#37404d] font-['Crimson_Text',serif]">
+                      <p className="text-[17px] leading-[26px] m-0 text-text-main font-rajdhani">
                         {test.desc}
                       </p>
                     </div>
