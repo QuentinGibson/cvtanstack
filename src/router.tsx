@@ -2,16 +2,20 @@ import { createRouter } from '@tanstack/react-router'
 import { QueryClient } from '@tanstack/react-query'
 import { setupRouterSsrQueryIntegration } from '@tanstack/react-router-ssr-query'
 import { ConvexQueryClient } from '@convex-dev/react-query'
-import { ConvexProvider } from 'convex/react'
+import { ConvexReactClient } from 'convex/react'
 import { routeTree } from './routeTree.gen'
 
 export function getRouter() {
   const CONVEX_URL = (import.meta as any).env.VITE_CONVEX_URL!
   if (!CONVEX_URL) {
-    console.error('missing envar VITE_CONVEX_URL')
+    throw new Error('missing VITE_CONVEX_URL envar')
   }
 
-  const convexQueryClient = new ConvexQueryClient(CONVEX_URL)
+  const convex = new ConvexReactClient(CONVEX_URL, {
+    unsavedChangesWarning: false,
+  })
+  const convexQueryClient = new ConvexQueryClient(convex)
+
   const queryClient: QueryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -26,13 +30,10 @@ export function getRouter() {
     routeTree,
     defaultPreload: 'intent',
     defaultPreloadStaleTime: 0,
-    context: { queryClient },
+    // Expose convexClient and convexQueryClient to route context
+    // so __root.tsx can use them for SSR auth token injection
+    context: { queryClient, convexClient: convex, convexQueryClient },
     scrollRestoration: true,
-    Wrap: ({ children }) => (
-      <ConvexProvider client={convexQueryClient.convexClient}>
-        {children}
-      </ConvexProvider>
-    ),
   })
 
   setupRouterSsrQueryIntegration({ router, queryClient })
