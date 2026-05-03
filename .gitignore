@@ -16,3 +16,4 @@ todos.json
 
 # Convex generated files (auto-created by npx convex dev)
 convex/_generated/
+src/routeTree.gen.ts
