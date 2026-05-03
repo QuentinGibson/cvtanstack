@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from '@tanstack/react-router'
+import { UserButton, Show, useAuth } from '@clerk/tanstack-react-start'
 
 const address = import.meta.env.VITE_ADDRESS || ''
 const phone = import.meta.env.VITE_PHONE || ''
@@ -10,6 +11,7 @@ export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const navigate = useNavigate()
+  const { signOut } = useAuth()
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -87,6 +89,47 @@ export default function Header() {
                 );
               })}
             </ul>
+
+            {/* Auth Buttons */}
+            <div className="mt-[40px] flex flex-col gap-[12px]">
+              <Show when="signed-out">
+                <Link
+                  to="/sign-in"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="w-full text-white text-[18px] font-semibold font-orbitron uppercase leading-[50px] transition-colors duration-200 hover:text-brand outline-none"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  to="/sign-up"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="w-full text-[13px] font-orbitron uppercase tracking-widest px-[18px] py-[10px] border border-brand text-brand rounded-[4px] transition-all duration-200 hover:bg-brand hover:text-dark-bg outline-none"
+                >
+                  Sign Up
+                </Link>
+              </Show>
+              <Show when="signed-in">
+                <div className="flex items-center gap-[12px] leading-[50px]">
+                  <UserButton />
+                  <Link
+                    to="/account"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-white text-[14px] font-orbitron uppercase tracking-widest hover:text-brand transition-colors"
+                  >
+                    Account
+                  </Link>
+                  <button
+                    onClick={() => {
+                      signOut()
+                      setIsMenuOpen(false)
+                    }}
+                    className="text-white text-[14px] font-orbitron uppercase tracking-widest hover:text-brand transition-colors ml-2 outline-none"
+                  >
+                    Sign Out
+                  </button>
+                </div>
+              </Show>
+            </div>
           </div>
 
           <p className="text-white text-[17px] font-rajdhani mt-[30px] leading-[26px]">
