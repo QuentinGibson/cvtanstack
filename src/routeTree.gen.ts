@@ -9,17 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SsoCallbackRouteImport } from './routes/sso-callback'
 import { Route as SingleProjectRouteImport } from './routes/single-project'
 import { Route as SinglePostSidebarRouteImport } from './routes/single-post-sidebar'
 import { Route as SinglePostRouteImport } from './routes/single-post'
+import { Route as SignUpRouteImport } from './routes/sign-up'
+import { Route as SignInRouteImport } from './routes/sign-in'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as HomeWhiteHeaderRouteImport } from './routes/home-white-header'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AccountRouteImport } from './routes/account'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SsoCallbackRoute = SsoCallbackRouteImport.update({
+  id: '/sso-callback',
+  path: '/sso-callback',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SingleProjectRoute = SingleProjectRouteImport.update({
   id: '/single-project',
   path: '/single-project',
@@ -33,6 +42,16 @@ const SinglePostSidebarRoute = SinglePostSidebarRouteImport.update({
 const SinglePostRoute = SinglePostRouteImport.update({
   id: '/single-post',
   path: '/single-post',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignUpRoute = SignUpRouteImport.update({
+  id: '/sign-up',
+  path: '/sign-up',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignInRoute = SignInRouteImport.update({
+  id: '/sign-in',
+  path: '/sign-in',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -60,6 +79,11 @@ const BlogRoute = BlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -74,94 +98,129 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/account': typeof AccountRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/home-white-header': typeof HomeWhiteHeaderRoute
   '/search': typeof SearchRoute
   '/services': typeof ServicesRoute
+  '/sign-in': typeof SignInRoute
+  '/sign-up': typeof SignUpRoute
   '/single-post': typeof SinglePostRoute
   '/single-post-sidebar': typeof SinglePostSidebarRoute
   '/single-project': typeof SingleProjectRoute
+  '/sso-callback': typeof SsoCallbackRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/account': typeof AccountRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/home-white-header': typeof HomeWhiteHeaderRoute
   '/search': typeof SearchRoute
   '/services': typeof ServicesRoute
+  '/sign-in': typeof SignInRoute
+  '/sign-up': typeof SignUpRoute
   '/single-post': typeof SinglePostRoute
   '/single-post-sidebar': typeof SinglePostSidebarRoute
   '/single-project': typeof SingleProjectRoute
+  '/sso-callback': typeof SsoCallbackRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/account': typeof AccountRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/home-white-header': typeof HomeWhiteHeaderRoute
   '/search': typeof SearchRoute
   '/services': typeof ServicesRoute
+  '/sign-in': typeof SignInRoute
+  '/sign-up': typeof SignUpRoute
   '/single-post': typeof SinglePostRoute
   '/single-post-sidebar': typeof SinglePostSidebarRoute
   '/single-project': typeof SingleProjectRoute
+  '/sso-callback': typeof SsoCallbackRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/account'
     | '/blog'
     | '/contact'
     | '/home-white-header'
     | '/search'
     | '/services'
+    | '/sign-in'
+    | '/sign-up'
     | '/single-post'
     | '/single-post-sidebar'
     | '/single-project'
+    | '/sso-callback'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/account'
     | '/blog'
     | '/contact'
     | '/home-white-header'
     | '/search'
     | '/services'
+    | '/sign-in'
+    | '/sign-up'
     | '/single-post'
     | '/single-post-sidebar'
     | '/single-project'
+    | '/sso-callback'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/account'
     | '/blog'
     | '/contact'
     | '/home-white-header'
     | '/search'
     | '/services'
+    | '/sign-in'
+    | '/sign-up'
     | '/single-post'
     | '/single-post-sidebar'
     | '/single-project'
+    | '/sso-callback'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AccountRoute: typeof AccountRoute
   BlogRoute: typeof BlogRoute
   ContactRoute: typeof ContactRoute
   HomeWhiteHeaderRoute: typeof HomeWhiteHeaderRoute
   SearchRoute: typeof SearchRoute
   ServicesRoute: typeof ServicesRoute
+  SignInRoute: typeof SignInRoute
+  SignUpRoute: typeof SignUpRoute
   SinglePostRoute: typeof SinglePostRoute
   SinglePostSidebarRoute: typeof SinglePostSidebarRoute
   SingleProjectRoute: typeof SingleProjectRoute
+  SsoCallbackRoute: typeof SsoCallbackRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sso-callback': {
+      id: '/sso-callback'
+      path: '/sso-callback'
+      fullPath: '/sso-callback'
+      preLoaderRoute: typeof SsoCallbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/single-project': {
       id: '/single-project'
       path: '/single-project'
@@ -181,6 +240,20 @@ declare module '@tanstack/react-router' {
       path: '/single-post'
       fullPath: '/single-post'
       preLoaderRoute: typeof SinglePostRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sign-up': {
+      id: '/sign-up'
+      path: '/sign-up'
+      fullPath: '/sign-up'
+      preLoaderRoute: typeof SignUpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sign-in': {
+      id: '/sign-in'
+      path: '/sign-in'
+      fullPath: '/sign-in'
+      preLoaderRoute: typeof SignInRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -218,6 +291,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -238,24 +318,29 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AccountRoute: AccountRoute,
   BlogRoute: BlogRoute,
   ContactRoute: ContactRoute,
   HomeWhiteHeaderRoute: HomeWhiteHeaderRoute,
   SearchRoute: SearchRoute,
   ServicesRoute: ServicesRoute,
+  SignInRoute: SignInRoute,
+  SignUpRoute: SignUpRoute,
   SinglePostRoute: SinglePostRoute,
   SinglePostSidebarRoute: SinglePostSidebarRoute,
   SingleProjectRoute: SingleProjectRoute,
+  SsoCallbackRoute: SsoCallbackRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
 
 import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
+import type { startInstance } from './start.ts'
 declare module '@tanstack/react-start' {
   interface Register {
     ssr: true
     router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
   }
 }

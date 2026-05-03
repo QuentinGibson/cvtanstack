@@ -15,8 +15,8 @@ export default defineSchema({
     website: v.optional(v.string()),
     location: v.optional(v.string()),
 
-    // Role: "admin" can manage all content, "author" can manage their own
-    role: v.union(v.literal("admin"), v.literal("author")),
+    // Role hierarchy: admin > mod > author > user
+    role: v.union(v.literal("admin"), v.literal("mod"), v.literal("author"), v.literal("user")),
   }).index("by_tokenIdentifier", ["tokenIdentifier"]),
 
   // ── Projects ──────────────────────────────────────────────────────────────

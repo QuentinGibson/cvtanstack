@@ -33,7 +33,7 @@ export const upsertFromAuth = internalMutation({
       tokenIdentifier: identity.tokenIdentifier,
       name: identity.name ?? "Anonymous",
       email: identity.email,
-      role: "author",
+      role: "user",
     });
     return (await ctx.db.get(id))!;
   },

@@ -73,7 +73,11 @@ function RootComponent() {
   return (
     <ClerkProvider>
       <ConvexProviderWithClerk client={context.convexClient} useAuth={useAuth}>
-        <Outlet />
+        <Header />
+        <main className="relative z-10">
+          <Outlet />
+        </main>
+        <Footer />
       </ConvexProviderWithClerk>
     </ClerkProvider>
   )
@@ -88,11 +92,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body suppressHydrationWarning>
         <div className="relative z-10">
           <StarBackground />
-          <Header />
-          <main className="relative z-10">
-            {children}
-          </main>
-          <Footer />
+          {children}
         </div>
         <TanStackDevtools
           config={{ position: 'bottom-right' }}
