@@ -32,12 +32,6 @@ function Index() {
             <p className="text-gray-500 font-orbitron text-[14px] uppercase tracking-widest">
               No projects yet.
             </p>
-            <p className="text-gray-600 font-orbitron text-[12px] mt-[8px]">
-              Add your first project in the Strapi admin at{' '}
-              <a href="http://localhost:1337/admin" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
-                localhost:1337/admin
-              </a>
-            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] auto-rows-[300px] md:auto-rows-[350px] grid-flow-row-dense mb-[30px]">
