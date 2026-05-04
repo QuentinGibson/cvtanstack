@@ -52,4 +52,18 @@ export default defineSchema({
     .index("by_published", ["published"])
     .index("by_slug", ["slug"])
     .index("by_authorId", ["authorId"]),
+
+  // ── Comments ───────────────────────────────────────────────────────────────
+  // _creationTime is a system field (auto-added) — use it as the timestamp.
+  // parentId = undefined means top-level; depth 0-3 (max 3 nested layers).
+  comments: defineTable({
+    postSlug: v.string(),
+    authorId: v.id("users"),
+    content: v.string(),
+    parentId: v.optional(v.id("comments")),
+    depth: v.number(),
+  })
+    .index("by_postSlug", ["postSlug"])
+    .index("by_parentId", ["parentId"])
+    .index("by_authorId", ["authorId"]),
 });

@@ -7,6 +7,8 @@
   },
   "scripts": {
     "dev": "vite dev --port 3000",
+    "dev:strapi": "cd strapi && npm run develop",
+    "dev:convex": "npx convex dev",
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run"
@@ -29,6 +31,8 @@
     "nitro": "^3.0.260415-beta",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
